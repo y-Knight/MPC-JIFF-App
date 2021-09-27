@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  mpcdev:
+    container_name: mpcdev_container
+    build: ./docker/mpc_dev
+    ports:
+      - 18880:8080
+    volumes:
+      - ./mpc_dev:/mpc_dev
+    tty: true
+    environment:
+      - TZ=Asia/Tokyo
+    networks:
+      - default
+
+networks:
+  default:
